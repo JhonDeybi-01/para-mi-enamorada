@@ -10,9 +10,12 @@
 
 <body>
 
-    <audio id="musica" autoplay loop controls style="position:fixed; bottom:10px; right:10px; z-index:10; opacity:0.7; border-radius:20px;">
-        <source src="nuestramusica/por verte feliz.mpeg" type="audio/mpeg">
-    </audio>
+    <div class="musica-contenedor">
+        <div class="musica-titulo">Nuestra música por siempre te amo</div>
+        <audio id="musica" autoplay loop controls preload="auto">
+            <source src="nuestramusica/por verte feliz.mpeg" type="audio/mpeg">
+        </audio>
+    </div>
 
     <div class="corazones"></div>
     <div class="mariposas"></div>

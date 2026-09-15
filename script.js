@@ -1,3 +1,43 @@
+const musica = document.getElementById("musica");
+let videoActivo = null;
+
+function reproducirMusica() {
+    musica.play().catch(() => {});
+}
+
+function configurarVideos() {
+    document.querySelectorAll("video").forEach((video) => {
+        video.addEventListener("play", () => {
+            videoActivo = video;
+            musica.pause();
+        });
+
+        video.addEventListener("pause", () => {
+            if (videoActivo === video) {
+                videoActivo = null;
+                reproducirMusica();
+            }
+        });
+
+        video.addEventListener("ended", () => {
+            if (videoActivo === video) {
+                videoActivo = null;
+                reproducirMusica();
+            }
+        });
+    });
+}
+
+function iniciarMusica() {
+    reproducirMusica();
+}
+
+configurarVideos();
+reproducirMusica();
+document.addEventListener("pointerdown", iniciarMusica, { once: true });
+document.addEventListener("keydown", iniciarMusica, { once: true });
+
+
 function mostrarMensaje() {
 
     const mensaje = document.getElementById("mensaje");

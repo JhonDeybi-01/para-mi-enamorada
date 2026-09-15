@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para el amor de mi vida ❤️</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <audio id="musica" autoplay loop controls style="position:fixed; bottom:10px; right:10px; z-index:10; opacity:0.7; border-radius:20px;">
+        <source src="nuestramusica/por verte feliz.mpeg" type="audio/mpeg">
+    </audio>
+
+    <div class="corazones"></div>
+    <div class="mariposas"></div>
+
+    <main>
+
+        <section class="inicio">
+            <p class="pequeno">Para la persona más especial ❤️</p>
+
+            <h1>Para ti, mi vida</h1>
+
+            <p class="subtitulo">
+                Hay personas que llegan a nuestra vida...
+                y simplemente la hacen más bonita.
+            </p>
+
+            <button onclick="mostrarMensaje()">
+                💌 Tengo algo que decirte
+            </button>
+        </section>
+
+
+        <section id="mensaje" class="mensaje oculto">
+
+            <h2>❤️ Mi vida ❤️</h2>
+
+            <p>
+                No sé exactamente en qué momento te convertiste
+                en una persona tan importante para mí.
+            </p>
+
+            <p>
+                Pero desde que llegaste a mi vida,
+                mis días tienen algo diferente.
+            </p>
+
+            <p>
+                Me encanta poder compartir momentos contigo,
+                hablar contigo, reír contigo y simplemente
+                saber que estás ahí.
+            </p>
+
+            <p class="especial">
+                Si tuviera que elegir nuevamente,
+                te elegiría a ti. Una y otra vez. ❤️
+            </p>
+
+        </section>
+
+
+        <section class="frases">
+
+            <h2>Unas palabras para ti 🌹</h2>
+
+            <div class="tarjetas">
+
+                <div class="tarjeta">
+                    <span>❤️</span>
+                    <p>
+                        Eres una de las razones por las que
+                        sonrío incluso en los días difíciles.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <span>💕</span>
+                    <p>
+                        No necesito un lugar perfecto,
+                        solo necesito estar contigo.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <span>✨</span>
+                    <p>
+                        Mi lugar favorito siempre será
+                        donde pueda estar a tu lado.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="galeria">
+
+            <h2>❤️ NUESTROS MOMENTOS ❤️</h2>
+
+            <p class="texto-galeria">
+                Cada fotografía guarda un pedacito de nuestra historia.
+            </p>
+
+            <div class="galeria-corazones">
+
+                <div class="foto-corazon">
+                    <div class="corazon-marco">
+                        <img src="fotos/ella1.jpeg" alt="Ella">
+                    </div>
+                    <p>Mi niña hermosa ❤️</p>
+                </div>
+
+                <div class="foto-corazon">
+                    <div class="corazon-marco">
+                        <img src="fotos/Mi amor.jpeg" alt="Mi amor">
+                    </div>
+                    <p>Mi amor 🌹</p>
+                </div>
+
+                <div class="foto-corazon">
+                    <div class="corazon-marco">
+                        <img src="fotos/nosotros.jpeg" alt="Nosotros">
+                    </div>
+                    <p>Tú y yo ❤️</p>
+                </div>
+
+                <div class="foto-corazon">
+                    <div class="corazon-marco">
+                        <img src="fotos/nosotros2.jpeg" alt="Nosotros">
+                    </div>
+                    <p>Un recuerdo inolvidable 💕</p>
+                </div>
+
+                <div class="foto-corazon">
+                    <div class="corazon-marco">
+                        <img src="fotos/nosotros3.jpeg" alt="Nosotros">
+                    </div>
+                    <p>Momentos contigo ✨</p>
+                </div>
+
+                <div class="foto-corazon">
+                    <div class="corazon-marco">
+                        <img src="fotos/nosotros4.jpeg" alt="Nosotros">
+                    </div>
+                    <p>Siempre juntos 💖</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="videos">
+
+            <h2>🎬 NUESTROS VIDEOS 🎬</h2>
+
+            <p class="texto-galeria">
+                Momentos que se movieron y se llenaron de vida.
+            </p>
+
+            <div class="videos-container">
+
+                <div class="video-card">
+                    <div class="video-marco">
+                        <video controls poster="fotos/nosotros.jpeg">
+                            <source src="videosdenosotros/mi vida entera.mp4" type="video/mp4">
+                        </video>
+                        <span class="play-icon">▶</span>
+                    </div>
+                    <p>Mi vida entera 💙</p>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-marco">
+                        <video controls poster="fotos/Mi amor.jpeg">
+                            <source src="videosdenosotros/mi alma gemela.mp4" type="video/mp4">
+                        </video>
+                        <span class="play-icon">▶</span>
+                    </div>
+                    <p>Mi alma gemela 💜</p>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-marco">
+                        <video controls poster="fotos/nosotros4.jpeg">
+                            <source src="videosdenosotros/el amor de mi vida.mp4" type="video/mp4">
+                        </video>
+                        <span class="play-icon">▶</span>
+                    </div>
+                    <p>El amor de mi vida 💙💜</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="perdon">
+
+            <h2>💔 Una petición para ti 💔</h2>
+
+            <p>
+                Sé que no siempre soy perfecto.
+                Sé que a veces puedo hacerte sentir sola o herirte sin querer.
+            </p>
+
+            <p>
+                Y quiero que sepas que lo siento de verdad.
+                Me duele pensar que te hice sufrir.
+            </p>
+
+            <p>
+                No tengo excusas. Solo tengo la verdad:
+                te amo demasiado como para perder tu sonrisa.
+            </p>
+
+            <p class="especial">
+                Por favor, dame otra oportunidad.
+                Prometo cuidar lo que tenemos como merece.
+            </p>
+
+            <p class="especial">
+                Perdóname mi amor. ❤️🤍
+            </p>
+
+        </section>
+
+
+        <section class="decision">
+
+            <h2>💔 Lo volvemos a intentar? 💔</h2>
+
+            <p>
+                No para ser los mismos de antes, sino para que esta vez
+                mejoremos ambos, ya sabiendo en qué nos equivocamos
+                y mejorando en el proceso.
+            </p>
+
+            <p>
+                Quiero que seas parte de mi vida, que seas la única que
+                esté ahí viéndome equivocarme, que estés en mis logros,
+                que estés en mi vida viendo todo lo que quiero hacer por ti.
+            </p>
+
+            <p>
+                Porque eres el amor de mi vida y no quiero perderte,
+                no quiero alejarme de este tiempo. Quiero que sigamos
+                pero mejorando como pareja. ¿Me perdonas?
+            </p>
+
+            <div class="botones">
+                <button class="btn-si" onclick="aceptar()">Sí, te amo ❤️</button>
+                <button class="btn-no" onclick="noAcepta()">No</button>
+            </div>
+
+            <div id="respuesta" class="respuesta oculto">
+                <p class="especial">
+                    Mejoraré por ti porque te amo. 🤍
+                    Gracias por darme esta oportunidad.
+                </p>
+            </div>
+
+        </section>
+
+
+        <section class="final">
+
+            <h2>Y quiero que recuerdes algo...</h2>
+
+            <p>
+                Pase lo que pase, siempre tendrás un lugar
+                muy especial en mi corazón.
+            </p>
+
+            <h1>Te quiero mucho ❤️</h1>
+
+            <p class="firma">
+                Con amor, alguien que tuvo la suerte de encontrarte.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -151,3 +151,113 @@ function noAcepta() {
     }, 300);
 
 }
+
+
+// Abrir tarjeta con mensaje de perdón
+
+function abrirTarjeta() {
+
+    const mensaje = document.getElementById("mensaje-perdon");
+
+    const tarjeta = document.querySelector(".tarjeta-frente");
+
+    tarjeta.classList.add("abierta");
+
+    mensaje.classList.remove("oculto");
+
+    mensaje.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+// Carousel de fotos
+
+let slideActual = 1;
+const totalSlides = 6;
+let autoplay;
+
+iniciarCarousel();
+
+function iniciarCarousel() {
+
+    mostrarSlide(slideActual);
+
+    autoplay = setInterval(() => {
+        slideSiguiente();
+    }, 4000);
+
+}
+
+function mostrarSlide(n) {
+
+    if (n > totalSlides) {
+        slideActual = 1;
+    } else if (n < 1) {
+        slideActual = totalSlides;
+    } else {
+        slideActual = n;
+    }
+
+    const slides = document.querySelectorAll(".slide");
+    const dotsContainer = document.querySelector(".dots");
+
+    slides.forEach((slide, i) => {
+        slide.classList.toggle("activo", i + 1 === slideActual);
+    });
+
+    if (dotsContainer) {
+        dotsContainer.innerHTML = "";
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement("div");
+            dot.classList.add("dot");
+            dot.classList.toggle("activa", i + 1 === slideActual);
+            dot.onclick = () => irASlide(i + 1);
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+}
+
+function slideSiguiente() {
+
+    clearTimeout(autoplay);
+
+    slideActual = slideActual % totalSlides + 1;
+
+    mostrarSlide(slideActual);
+
+    autoplay = setInterval(() => {
+        slideSiguiente();
+    }, 4000);
+
+}
+
+function slideAnterior() {
+
+    clearTimeout(autoplay);
+
+    slideActual = slideActual === 1 ? totalSlides : slideActual - 1;
+
+    mostrarSlide(slideActual);
+
+    autoplay = setInterval(() => {
+        slideSiguiente();
+    }, 4000);
+
+}
+
+function irASlide(n) {
+
+    clearTimeout(autoplay);
+
+    slideActual = n;
+
+    mostrarSlide(slideActual);
+
+    autoplay = setInterval(() => {
+        slideSiguiente();
+    }, 4000);
+
+}

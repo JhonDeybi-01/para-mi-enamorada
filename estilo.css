@@ -107,6 +107,7 @@ button:hover {
 }
 
 .mensaje h2,
+.ramo-flor h2,
 .frases h2,
 .galeria h2,
 .videos h2,
@@ -536,18 +537,617 @@ button:hover {
     text-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
+/* ============ Sección: Ramo de flores amarillas ============ */
+
+.ramo-flor {
+    background: linear-gradient(135deg, #fff9c4 0%, #fff176 50%, #fff9c4 100%);
+}
+
+.corona-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.corona {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.corona-estrella {
+    font-size: 60px;
+    animation: brillo-corona 2.5s ease-in-out infinite alternate;
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.6));
+}
+
+.corona-texto {
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    color: #5e35b1;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes brillo-corona {
+    0% {
+        filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.4)) brightness(1);
+    }
+    100% {
+        filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.9)) brightness(1.1);
+    }
+}
+
+.ramo-grande {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.ramo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 14px;
+    padding: 30px;
+    max-width: 560px;
+    background: radial-gradient(
+            circle at 50% 35%,
+            rgba(255, 255, 255, 0.5) 0%,
+            transparent 70%
+        );
+    border-radius: 60% 60% 50% 50%;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.08);
+}
+
+.flor {
+    font-size: 36px;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.18));
+    animation: flotar-flores 4s ease-in-out infinite alternate;
+}
+
+.flor:nth-child(3n) {
+    font-size: 48px;
+}
+
+.flor:nth-child(5n) {
+    font-size: 32px;
+}
+
+.flor:nth-child(7n) {
+    font-size: 52px;
+}
+
+.flor:nth-child(4n) {
+    animation-duration: 3.5s;
+}
+
+.flor:nth-child(6n) {
+    animation-duration: 4.5s;
+}
+
+.flor:nth-child(8n) {
+    animation-duration: 3s;
+}
+
+@keyframes flotar-flores {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(6deg);
+    }
+}
+
+/* ============ Tarjeta con mensaje de perdón ============ */
+
+.tarjeta-recibir {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.tarjeta-frente {
+    display: inline-block;
+    padding: 26px 55px;
+    background: linear-gradient(135deg, #fff176, #ffd54f);
+    border-radius: 28px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 26px;
+    color: #5e35b1;
+    cursor: pointer;
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(255, 215, 0, 0.4);
+    transition: all 0.4s ease;
+    border: 2px dashed rgba(255, 255, 255, 0.6);
+    position: relative;
+    overflow: visible;
+}
+
+.tarjeta-frente:hover {
+    transform: scale(1.08) rotate(2deg);
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.3),
+        0 0 25px rgba(255, 215, 0, 0.7);
+}
+
+.brillo {
+    position: absolute;
+    top: -14px;
+    right: -16px;
+    font-size: 32px;
+    animation: latir 1.5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes latir {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.35);
+    }
+}
+
+.tarjeta-frente.abierta {
+    transform: scale(0.75) rotate(-5deg);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.mensaje-perdon {
+    margin-top: 30px;
+    padding: 35px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 28px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: aparecer 0.8s ease;
+    color: #4a148c;
+}
+
+.mensaje-perdon p {
+    font-size: 20px;
+    line-height: 1.7;
+    margin: 14px 0;
+}
+
+.mensaje-perdon .especial {
+    font-size: 26px !important;
+    color: #5e35b1;
+}
+
+/* ============ Carousel de fotos ============ */
+
+.carousel-fotos {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.carousel-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    height: 500px;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    background-size: cover;
+    background-position: center;
+    background-image: var(--img);
+    display: flex;
+    align-items: flex-end;
+}
+
+.slide.activo {
+    opacity: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.5) 100%);
+    border-radius: 15px;
+}
+
+.caption {
+    position: relative;
+    z-index: 3;
+    margin-bottom: 30px;
+    margin-left: 40px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 24px;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 3;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-50%) scale(1.15);
+}
+
+.carousel-btn.prev {
+    left: 15px;
+}
+
+.carousel-btn.next {
+    right: 15px;
+}
+
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 3;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.dot.activa {
+    background: white;
+    transform: scale(1.3);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+/* ============ Corazón de fotos ============ */
+
+.corazon-fotos {
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #fce4ec 100%);
+}
+
+.corazon-layout {
+    position: relative;
+    max-width: 550px;
+    height: 480px;
+    margin: 0 auto;
+}
+
+.corazon-central,
+.corazon-pequeño {
+    border-radius: 0;
+    overflow: hidden;
+    border: 4px solid white;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+    clip-path: polygon(
+        50% 100%, 42% 91%, 30% 80%, 18% 68%, 8% 55%,
+        3% 42%, 3% 30%, 7% 20%, 15% 12%, 25% 8%,
+        35% 9%, 43% 14%, 50% 24%, 57% 14%, 65% 9%,
+        75% 8%, 85% 12%, 93% 20%, 97% 30%, 97% 42%,
+        92% 55%, 82% 68%, 70% 80%, 58% 91%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.corazon-central img,
+.corazon-pequeño img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: inherit;
+}
+
+.corazon-central {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    z-index: 3;
+    animation: latido-sol 3s ease-in-out infinite;
+}
+
+.corazon-central:hover {
+    width: 220px;
+    height: 220px;
+}
+
+@keyframes latido-sol {
+    0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 22px rgba(255, 215, 0, 0.7));
+    }
+}
+
+.corazon-pequeño {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    z-index: 2;
+    transition: all 0.4s ease;
+}
+
+.corazon-pequeño:hover {
+    width: 130px;
+    height: 130px;
+    z-index: 4;
+}
+
+.corazon-1 { top: 25px; left: 40px; }
+.corazon-2 { top: 25px; right: 40px; }
+.corazon-3 { bottom: 80px; left: 30px; }
+.corazon-4 { bottom: 80px; right: 30px; }
+.corazon-5 { bottom: 15px; left: 50%; transform: translateX(-50%); }
+
+.mensaje-flotante {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.mensaje-flotante span {
+    font-family: 'Great Vibes', cursive;
+    font-size: 35px;
+    color: #ad1457;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.7);
+    animation: latir 2s ease-in-out infinite;
+}
+
+/* ============ Memorias Polaroid ============ */
+
+.polaroid-memorias {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.polaroid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.polaroid {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15),
+        0 0 25px rgba(255, 215, 0, 0.2);
+    transform: rotate(var(--rotar));
+    transition: all 0.4s ease;
+    max-width: 240px;
+    text-align: center;
+    position: relative;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.08);
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25),
+        0 0 35px rgba(255, 215, 0, 0.4);
+    z-index: 5;
+}
+
+.polaroid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+}
+
+.polaroid-caption {
+    margin-top: 15px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 17px;
+    color: #5e35b1;
+    font-weight: 700;
+}
+
+.polaroid::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+.flores-decorativas {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.flor-deco {
+    font-size: 32px;
+    display: inline-block;
+    margin: 0 10px;
+    animation: flotar-flores 3s ease-in-out infinite alternate;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
+}
+
+.flor-deco:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.flor-deco:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.flor-deco:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+.flor-deco:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+.flor-deco:nth-child(5) {
+    animation-delay: 1.5s;
+}
+
 @media (max-width: 600px) {
     .inicio h1 {
         font-size: 42px;
     }
 
     .mensaje h2,
+    .ramo-flor h2,
+    .carousel-fotos h2,
+    .corazon-fotos h2,
+    .polaroid-memorias h2,
     .frases h2,
     .final h2,
     .perdon h2,
     .decision h2,
     .videos h2 {
         font-size: 30px;
+    }
+
+    .corona-texto {
+        font-size: 30px;
+    }
+
+    .corona-estrella {
+        font-size: 45px;
+    }
+
+    .tarjeta-frente {
+        font-size: 20px;
+        padding: 20px 40px;
+    }
+
+    .flor {
+        font-size: 26px;
+    }
+
+    .flor:nth-child(3n) {
+        font-size: 36px;
+    }
+
+    .flor:nth-child(5n) {
+        font-size: 24px;
+    }
+
+    .flor:nth-child(7n) {
+        font-size: 38px;
+    }
+
+    .mensaje-perdon p {
+        font-size: 18px;
+    }
+
+    .carousel {
+        height: 400px;
+    }
+
+    .slide {
+        height: 400px;
+    }
+
+    .caption {
+        font-size: 19px;
+        margin-left: 25px;
+    }
+
+    .carousel-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .corazon-layout {
+        height: 400px;
+    }
+
+    .corazon-central {
+        width: 160px;
+        height: 160px;
+    }
+
+    .corazon-pequeño {
+        width: 85px;
+        height: 85px;
+    }
+
+    .corazon-1 { top: 20px; left: 25px; }
+    .corazon-2 { top: 20px; right: 25px; }
+    .corazon-3 { bottom: 65px; left: 15px; }
+    .corazon-4 { bottom: 65px; right: 15px; }
+    .corazon-5 { bottom: 10px; left: 50%; transform: translateX(-50%); }
+
+    .mensaje-flotante span {
+        font-size: 26px;
+    }
+
+    .polaroid-container {
+        gap: 20px;
+    }
+
+    .polaroid {
+        max-width: 200px;
+        padding: 16px;
+    }
+
+    .polaroid img {
+        height: 140px;
+    }
+
+    .polaroid-caption {
+        font-size: 15px;
+    }
+
+    .flor-deco {
+        font-size: 24px;
     }
 
     .final h1 {

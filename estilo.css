@@ -841,198 +841,169 @@ button:hover {
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
 }
 
-/* ============ Corazón de fotos ============ */
+/* ============ Razones por las que te amo ============ */
 
-.corazon-fotos {
+.razones-amor {
     background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #fce4ec 100%);
 }
 
-.corazon-layout {
-    position: relative;
-    max-width: 550px;
-    height: 480px;
+.lista-razones {
+    max-width: 700px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 20px;
 }
 
-.corazon-central,
-.corazon-pequeño {
-    border-radius: 0;
-    overflow: hidden;
-    border: 4px solid white;
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
-    clip-path: polygon(
-        50% 100%, 42% 91%, 30% 80%, 18% 68%, 8% 55%,
-        3% 42%, 3% 30%, 7% 20%, 15% 12%, 25% 8%,
-        35% 9%, 43% 14%, 50% 24%, 57% 14%, 65% 9%,
-        75% 8%, 85% 12%, 93% 20%, 97% 30%, 97% 42%,
-        92% 55%, 82% 68%, 70% 80%, 58% 91%
-    );
+.razon {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    padding: 18px 25px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.razon:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.numero {
+    font-family: 'Great Vibes', cursive;
+    font-size: 36px;
+    color: #e91e63;
+    font-weight: bold;
+    min-width: 45px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.corazon-central img,
-.corazon-pequeño img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    clip-path: inherit;
-}
-
-.corazon-central {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 200px;
-    height: 200px;
-    z-index: 3;
-    animation: latido-sol 3s ease-in-out infinite;
-}
-
-.corazon-central:hover {
-    width: 220px;
-    height: 220px;
-}
-
-@keyframes latido-sol {
-    0%, 100% {
-        filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
-    }
-    50% {
-        filter: drop-shadow(0 0 22px rgba(255, 215, 0, 0.7));
-    }
-}
-
-.corazon-pequeño {
-    position: absolute;
-    width: 110px;
-    height: 110px;
-    z-index: 2;
-    transition: all 0.4s ease;
-}
-
-.corazon-pequeño:hover {
-    width: 130px;
-    height: 130px;
-    z-index: 4;
-}
-
-.corazon-1 { top: 25px; left: 40px; }
-.corazon-2 { top: 25px; right: 40px; }
-.corazon-3 { bottom: 80px; left: 30px; }
-.corazon-4 { bottom: 80px; right: 30px; }
-.corazon-5 { bottom: 15px; left: 50%; transform: translateX(-50%); }
-
-.mensaje-flotante {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.mensaje-flotante span {
-    font-family: 'Great Vibes', cursive;
-    font-size: 35px;
-    color: #ad1457;
-    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.7);
-    animation: latir 2s ease-in-out infinite;
-}
-
-/* ============ Memorias Polaroid ============ */
-
-.polaroid-memorias {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.polaroid-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.polaroid {
     background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.15),
-        0 0 25px rgba(255, 215, 0, 0.2);
-    transform: rotate(var(--rotar));
-    transition: all 0.4s ease;
-    max-width: 240px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.razon p {
+    font-size: 19px;
+    line-height: 1.4;
+    color: #4a148c;
+    margin: 0;
+}
+
+.decoracion-razones {
     text-align: center;
-    position: relative;
+    margin-top: 30px;
 }
 
-.polaroid:hover {
-    transform: rotate(0deg) scale(1.08);
-    box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.25),
-        0 0 35px rgba(255, 215, 0, 0.4);
-    z-index: 5;
-}
-
-.polaroid img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-    border-radius: 4px;
-}
-
-.polaroid-caption {
-    margin-top: 15px;
-    font-family: 'Dancing Script', cursive;
-    font-size: 17px;
-    color: #5e35b1;
-    font-weight: 700;
-}
-
-.polaroid::after {
-    content: "";
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 20px;
-    opacity: 0.8;
-}
-
-.flores-decorativas {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.flor-deco {
+.decoracion-razones span {
     font-size: 32px;
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 12px;
     animation: flotar-flores 3s ease-in-out infinite alternate;
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
 }
 
-.flor-deco:nth-child(1) {
-    animation-delay: 0.3s;
+/* ============ Línea de tiempo romántica ============ */
+
+.linea-tiempo {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #e8f5e9 100%);
 }
 
-.flor-deco:nth-child(2) {
-    animation-delay: 0.6s;
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
 }
 
-.flor-deco:nth-child(3) {
-    animation-delay: 0.9s;
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: linear-gradient(180deg, #e91e63, #f50057, #e91e63);
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(233, 30, 99, 0.5);
 }
 
-.flor-deco:nth-child(4) {
-    animation-delay: 1.2s;
+.evento-timeline {
+    position: relative;
+    margin-bottom: 45px;
+    width: 100%;
 }
 
-.flor-deco:nth-child(5) {
-    animation-delay: 1.5s;
+.evento-timeline:nth-child(odd) {
+    padding-right: calc(50% + 40px);
+    text-align: right;
+}
+
+.evento-timeline:nth-child(even) {
+    padding-left: calc(50% + 40px);
+    text-align: left;
+}
+
+.evento-timeline:last-child {
+    margin-bottom: 0;
+}
+
+.fecha-timeline {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-weight: 700;
+    color: #ad1457;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+    font-size: 15px;
+    z-index: 2;
+}
+
+.evento-timeline:nth-child(odd) .fecha-timeline {
+    left: auto;
+    right: -40px;
+    transform: none;
+}
+
+.evento-timeline:nth-child(even) .fecha-timeline {
+    left: -40px;
+    transform: none;
+}
+
+.contenido-timeline {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.12),
+        0 0 20px rgba(233, 30, 99, 0.15);
+    display: inline-block;
+    max-width: 320px;
+}
+
+.contenido-timeline h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    color: #5e35b1;
+    margin-bottom: 10px;
+}
+
+.contenido-timeline p {
+    font-size: 17px;
+    line-height: 1.5;
+    color: #424242;
+    margin: 0;
 }
 
 @media (max-width: 600px) {

@@ -838,6 +838,9 @@ button:hover {
 /* ============ Collage de recuerdos ============ */
 
 .collage-recuerdos {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
     background: rgba(255, 255, 255, 0.06);
     padding: 80px 20px;
     text-align: center;
@@ -852,6 +855,7 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 25px;
+    width: 100%;
     max-width: 1300px;
     margin: 0 auto;
     padding: 20px;
@@ -859,6 +863,7 @@ button:hover {
 
 .collage-marco {
     position: relative;
+    min-width: 0;
     border-radius: 18px;
     overflow: hidden;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
@@ -878,8 +883,8 @@ button:hover {
 .collage-caption {
     position: absolute;
     bottom: 12px;
-    left: 0;
-    right: 0;
+    left: 12px;
+    right: 12px;
     text-align: center;
     font-family: 'Dancing Script', cursive;
     font-size: 18px;
@@ -1318,24 +1323,42 @@ button:hover {
         font-size: 18px;
     }
 
+    .collage-recuerdos {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        padding: 60px 0 70px;
+    }
+
     .collage-recuerdos h2 {
         font-size: 34px;
+        margin-left: 16px;
+        margin-right: 16px;
     }
 
     .collage-container {
-        gap: 15px;
-        padding: 10px;
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 12px 12px;
     }
 
     .collage-marco {
-        padding: 8px 8px 40px;
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+        padding: 8px 8px 42px;
     }
 
     .collage-marco img {
-        height: 150px;
+        height: auto;
+        aspect-ratio: 4 / 5;
     }
 
     .collage-caption {
+        left: 8px;
+        right: 8px;
         font-size: 14px;
     }
 

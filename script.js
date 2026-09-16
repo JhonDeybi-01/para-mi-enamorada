@@ -2,6 +2,10 @@ const musica = document.getElementById("musica");
 let videoActivo = null;
 
 function reproducirMusica() {
+    if (!musica) {
+        return;
+    }
+
     musica.play().catch(() => {});
 }
 
@@ -34,7 +38,12 @@ function iniciarMusica() {
 
 configurarVideos();
 reproducirMusica();
+
+musica.addEventListener("canplay", reproducirMusica, { once: true });
+window.addEventListener("load", reproducirMusica);
+window.addEventListener("pageshow", reproducirMusica);
 document.addEventListener("pointerdown", iniciarMusica, { once: true });
+document.addEventListener("touchstart", iniciarMusica, { once: true, passive: true });
 document.addEventListener("keydown", iniciarMusica, { once: true });
 
 

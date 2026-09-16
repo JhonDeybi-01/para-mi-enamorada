@@ -1,4 +1,4 @@
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -388,6 +388,41 @@ button:hover {
     margin: auto;
 }
 
+.fecha-especial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin: 30px auto 50px;
+    flex-wrap: wrap;
+    font-family: 'Great Vibes', cursive;
+    font-size: 38px;
+    color: #fff;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.3);
+}
+
+.fecha-especial span {
+    background: rgba(255,255,255,0.25);
+    padding: 8px 22px;
+    border-radius: 30px;
+    backdrop-filter: blur(8px);
+}
+
+.fecha-asterisco {
+    font-size: 28px;
+    color: #ffd54f;
+    animation: latir 2s ease-in-out infinite;
+}
+
+.fecha-texto {
+    width: 100%;
+    font-family: 'Dancing Script', cursive;
+    font-size: 26px;
+    margin-top: 10px;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
 .foto-corazon {
     text-align: center;
 }
@@ -589,49 +624,125 @@ button:hover {
 }
 
 .ramo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px 60px;
+    max-width: 560px;
+}
+
+.tallo {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22px;
+    height: 180px;
+    background: linear-gradient(180deg, #66bb6a 0%, #388e3c 50%, #2e7d32 100%);
+    border-radius: 12px 12px 4px 4px;
+    box-shadow:
+        inset 0 -4px 8px rgba(0,0,0,0.2),
+        0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1;
+}
+
+.tallo::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 14px;
+    background: linear-gradient(90deg, transparent, #81c784, transparent);
+    border-radius: 50%;
+}
+
+.hoja {
+    position: absolute;
+    bottom: 40px;
+    width: 60px;
+    height: 28px;
+    background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%);
+    border-radius: 50% 0 50% 0;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.hoja-izq {
+    left: -20px;
+    transform: rotate(-35deg);
+    animation: balanceo-izq 4s ease-in-out infinite alternate;
+}
+
+.hoja-der {
+    right: -20px;
+    transform: rotate(35deg) scaleX(-1);
+    animation: balanceo-der 4s ease-in-out infinite alternate;
+}
+
+@keyframes balanceo-izq {
+    0%, 100% { transform: rotate(-35deg) translateY(0); }
+    50% { transform: rotate(-50deg) translateY(-6px); }
+}
+
+@keyframes balanceo-der {
+    0%, 100% { transform: rotate(35deg) scaleX(-1) translateY(0); }
+    50% { transform: rotate(50deg) scaleX(-1) translateY(-6px); }
+}
+
+.flores-grupo {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: center;
-    gap: 14px;
-    padding: 30px;
-    max-width: 560px;
-    background: radial-gradient(
-            circle at 50% 35%,
-            rgba(255, 255, 255, 0.5) 0%,
-            transparent 70%
-        );
-    border-radius: 60% 60% 50% 50%;
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.08);
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    max-width: 500px;
+    z-index: 3;
 }
 
-.flor {
-    font-size: 36px;
-    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.18));
+.flores-grupo .flor {
+    display: inline-block;
+    font-size: 38px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
     animation: flotar-flores 4s ease-in-out infinite alternate;
+    transform-origin: bottom center;
 }
 
-.flor:nth-child(3n) {
-    font-size: 48px;
+.flores-grupo .flor:nth-child(odd) {
+    animation-delay: 0s;
 }
 
-.flor:nth-child(5n) {
-    font-size: 32px;
+.flores-grupo .flor:nth-child(even) {
+    animation-delay: 0.5s;
 }
 
-.flor:nth-child(7n) {
-    font-size: 52px;
+.flores-grupo .flor:nth-child(3n) {
+    font-size: 50px;
+    animation-delay: 0.2s;
 }
 
-.flor:nth-child(4n) {
+.flores-grupo .flor:nth-child(5n) {
+    font-size: 34px;
+    animation-delay: 0.7s;
+}
+
+.flores-grupo .flor:nth-child(7n) {
+    font-size: 54px;
+    animation-delay: 0.4s;
+}
+
+.flores-grupo .flor:nth-child(4n) {
     animation-duration: 3.5s;
 }
 
-.flor:nth-child(6n) {
+.flores-grupo .flor:nth-child(6n) {
     animation-duration: 4.5s;
 }
 
-.flor:nth-child(8n) {
+.flores-grupo .flor:nth-child(8n) {
     animation-duration: 3s;
 }
 
@@ -640,7 +751,7 @@ button:hover {
         transform: translateY(0) rotate(0deg);
     }
     50% {
-        transform: translateY(-12px) rotate(6deg);
+        transform: translateY(-10px) rotate(5deg);
     }
 }
 
@@ -724,122 +835,71 @@ button:hover {
     color: #5e35b1;
 }
 
-/* ============ Carousel de fotos ============ */
+/* ============ Collage de recuerdos ============ */
 
-.carousel-fotos {
-    background: rgba(255, 255, 255, 0.08);
+.collage-recuerdos {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 80px 20px;
+    text-align: center;
 }
 
-.carousel-container {
-    max-width: 800px;
+.collage-recuerdos h2 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.collage-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 20px;
 }
 
-.carousel {
+.collage-marco {
     position: relative;
+    border-radius: 18px;
     overflow: hidden;
-    border-radius: 30px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    height: 500px;
-}
-
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.8s ease;
-    background-size: cover;
-    background-position: center;
-    background-image: var(--img);
-    display: flex;
-    align-items: flex-end;
-}
-
-.slide.activo {
-    opacity: 1;
-    position: relative;
-    z-index: 2;
-}
-
-.slide::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.5) 100%);
-    border-radius: 15px;
-}
-
-.caption {
-    position: relative;
-    z-index: 3;
-    margin-bottom: 30px;
-    margin-left: 40px;
-    font-family: 'Dancing Script', cursive;
-    font-size: 24px;
-    color: white;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(8px);
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 22px;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 3;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-}
-
-.carousel-btn:hover {
-    background: rgba(255, 255, 255, 0.4);
-    transform: translateY(-50%) scale(1.15);
-}
-
-.carousel-btn.prev {
-    left: 15px;
-}
-
-.carousel-btn.next {
-    right: 15px;
-}
-
-.dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 12px;
-    z-index: 3;
-}
-
-.dot {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-}
-
-.dot.activa {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     background: white;
-    transform: scale(1.3);
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+    padding: 12px 12px 50px;
 }
+
+.collage-marco img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+.collage-caption {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    padding: 0 10px;
+}
+
+.collage-marco:hover {
+    transform: translateY(-8px) rotate(var(--rotar, 0deg)) scale(1.03);
+    box-shadow: 0 20px 50px rgba(124,77,255,0.5);
+}
+
+.collage-1 { --rotar: -4deg; }
+.collage-2 { --rotar: 3deg; }
+.collage-3 { --rotar: -2deg; }
+.collage-4 { --rotar: 5deg; }
+.collage-5 { --rotar: -5deg; }
+.collage-6 { --rotar: 2deg; }
+.collage-7 { --rotar: -3deg; }
 
 /* ============ Razones por las que te amo ============ */
 
@@ -1006,6 +1066,123 @@ button:hover {
     margin: 0;
 }
 
+/* ============ Polaroid Memorias ============ */
+
+.polaroid-memorias {
+    background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.15) 100%);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.polaroid-memorias h2 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.polaroid-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.polaroid {
+    background: white;
+    padding: 18px 18px 50px;
+    border-radius: 6px 6px 12px 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    max-width: 240px;
+    transform: rotate(var(--rotar, 0deg));
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 0 18px 45px rgba(124,77,255,0.5);
+}
+
+.polaroid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+}
+
+.polaroid-caption {
+    font-family: 'Dancing Script', cursive;
+    font-size: 18px;
+    color: #4a148c;
+    margin-top: 14px;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.corazon-central-polaroid {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto 40px;
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #ff6b9d, #c44569);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(255, 107, 157, 0.7);
+    animation: latir 2s ease-in-out infinite;
+}
+
+.corazon-central-polaroid span {
+    font-size: 45px;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.flores-decorativas {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 40px 0 30px;
+    flex-wrap: wrap;
+}
+
+.flores-decorativas .flor-deco {
+    font-size: 40px;
+    animation: flotar-flores 3s ease-in-out infinite;
+}
+
+.flores-decorativas .flor-deco:nth-child(2n) {
+    animation-duration: 3.5s;
+}
+
+.flores-decorativas .flor-deco:nth-child(3n) {
+    animation-duration: 4s;
+}
+
+.texto-final-polaroid {
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 32px;
+    color: #fff;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.texto-final-polaroid .asterisco {
+    color: #ffd54f;
+    font-size: 28px;
+    animation: latir 2s ease-in-out infinite;
+}
+
 @media (max-width: 600px) {
     .inicio h1 {
         font-size: 42px;
@@ -1013,8 +1190,7 @@ button:hover {
 
     .mensaje h2,
     .ramo-flor h2,
-    .carousel-fotos h2,
-    .corazon-fotos h2,
+    .collage-recuerdos h2,
     .polaroid-memorias h2,
     .frases h2,
     .final h2,
@@ -1037,19 +1213,43 @@ button:hover {
         padding: 20px 40px;
     }
 
-    .flor {
-        font-size: 26px;
+    .tallo {
+        height: 120px;
+        width: 16px;
     }
 
-    .flor:nth-child(3n) {
+    .hoja {
+        width: 45px;
+        height: 20px;
+        bottom: 25px;
+    }
+
+    .hoja-izq {
+        left: -15px;
+    }
+
+    .hoja-der {
+        right: -15px;
+    }
+
+    .flores-grupo {
+        padding: 10px;
+        gap: 6px;
+    }
+
+    .flores-grupo .flor {
+        font-size: 28px;
+    }
+
+    .flores-grupo .flor:nth-child(3n) {
         font-size: 36px;
     }
 
-    .flor:nth-child(5n) {
+    .flores-grupo .flor:nth-child(5n) {
         font-size: 24px;
     }
 
-    .flor:nth-child(7n) {
+    .flores-grupo .flor:nth-child(7n) {
         font-size: 38px;
     }
 
@@ -1057,68 +1257,86 @@ button:hover {
         font-size: 18px;
     }
 
-    .carousel {
-        height: 400px;
-    }
-
-    .slide {
-        height: 400px;
-    }
-
-    .caption {
-        font-size: 19px;
-        margin-left: 25px;
-    }
-
-    .carousel-btn {
-        width: 42px;
-        height: 42px;
-        font-size: 18px;
-    }
-
-    .corazon-layout {
-        height: 400px;
-    }
-
-    .corazon-central {
-        width: 160px;
-        height: 160px;
-    }
-
-    .corazon-pequeño {
-        width: 85px;
-        height: 85px;
-    }
-
-    .corazon-1 { top: 20px; left: 25px; }
-    .corazon-2 { top: 20px; right: 25px; }
-    .corazon-3 { bottom: 65px; left: 15px; }
-    .corazon-4 { bottom: 65px; right: 15px; }
-    .corazon-5 { bottom: 10px; left: 50%; transform: translateX(-50%); }
-
-    .mensaje-flotante span {
-        font-size: 26px;
-    }
-
     .polaroid-container {
-        gap: 20px;
+        gap: 15px;
     }
 
     .polaroid {
-        max-width: 200px;
-        padding: 16px;
+        max-width: 180px;
+        padding: 12px 12px 40px;
     }
 
     .polaroid img {
-        height: 140px;
+        height: 120px;
     }
 
     .polaroid-caption {
-        font-size: 15px;
+        font-size: 13px;
     }
 
-    .flor-deco {
+    .corazon-central-polaroid {
+        width: 55px;
+        height: 55px;
+        margin: 20px auto 25px;
+    }
+
+    .corazon-central-polaroid span {
+        font-size: 28px;
+    }
+
+    .flores-decorativas {
+        margin: 25px 0 20px;
+        gap: 15px;
+    }
+
+    .flores-decorativas .flor-deco {
+        font-size: 26px;
+    }
+
+    .texto-final-polaroid {
+        font-size: 20px;
+        gap: 10px;
+        margin-top: 25px;
+    }
+
+    .texto-final-polaroid .asterisco {
+        font-size: 18px;
+    }
+
+    .fecha-especial {
         font-size: 24px;
+        gap: 10px;
+        margin: 20px auto 30px;
+    }
+
+    .fecha-especial span {
+        padding: 5px 14px;
+        font-size: 20px;
+    }
+
+    .fecha-texto {
+        font-size: 18px;
+    }
+
+    .collage-recuerdos h2 {
+        font-size: 34px;
+    }
+
+    .collage-container {
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .collage-marco {
+        padding: 8px 8px 40px;
+    }
+
+    .collage-marco img {
+        height: 150px;
+    }
+
+    .collage-caption {
+        font-size: 14px;
     }
 
     .final h1 {
